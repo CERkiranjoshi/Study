@@ -1,0 +1,70 @@
+<div class="row" ng-show="selectseattime">
+    <div class="col-xs-12 col-md-12 seat-selection">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{SelectedMovie}}</h3><br/>
+                <span>{{SelectedCinema}}</span><br/>
+                <span style="color:red;"> {{SelectedDate| date:'EEEE , dd MMM'}}</span><br/>
+                <!--note we can select date from dropdown as per urgency i have selected current time hop you understand-->
+                <span style="color:black;">{{SelectedDate| date:'h:mm a'}}</span>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="sel1">CATEGORY</label>
+                    <select class="form-control" id="sel1" ng-model="SelectedCategory" ng-change="changeSelected()">
+                        <option value="Select category of seats">Select category of seats</option>
+                        <option ng-repeat="cat in SelectCategory" value="{{cat.category}}">{{cat.category}}-RS .{{cat.price}}</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sel1">NO. OF TICKETS</label>
+                    <select class="form-control" id="sel1" ng-model="SelectedSeats" ng-change="changeSelected()">
+                        <option value="Select seats">Select seats</option>
+                        <option ng-repeat="seat in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" value="{{seat}}">{{seat}}</option>
+
+                    </select>
+                </div>
+                <div class="form-group" ng-show="isselected">
+                    <h5>CATEGORY : <span class="label label-success">{{SelectedCategory}}</span></h5>
+                    <h5>NO. OF TICKETS: <span class="label label-success">{{SelectedSeats}}</span></h5>
+                    <h5>Total : <span class="label label-danger">{{getTotal()}} RS</span></h5>
+                </div>
+            </div>
+            <div class="panel-footer" ng-show="isselected">
+                    <button type="button" class="btn btn-danger btn-md" ng-click="showAvailableSeats()">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--note we need to give min width we can not srink seat position:concept of book my show-->
+<div class="row" ng-if="!selectseattime">
+    <div class="col-xs-12 col-md-12 seat-selection">
+        <div class="panel panel-default seat-selection-panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Select Your Seats : <span class="label label-success">CATEGORY : {{SelectedCategory}}</span>  <span class="label label-success">NO. OF TICKETS: {{SelectedSeats}}</span> </h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group" >
+                    <a href="javascript:void(0)" class="list-group-item">GOLD : ROW A</a>
+                </div>
+                <a class="btn btn-default btn-xs seat-style" id="gold_a_{{$index+1}}" ng-click="setSeatSelected(seat)" ng-class="{disabled:seat.isAvailable==false}" ng-repeat="seat in seats | byCategory:'A'">{{seat.code}}</a>
+                
+                <div class="list-group fixed-top">
+                    <a href="javascript:void(0)" class="list-group-item">PRIME : ROW B</a>
+                </div>
+                 <a class="btn btn-default btn-xs seat-style" id="prime_b_{{$index+1}}" ng-click="setSeatSelected(seat)" ng-class="{disabled:seat.isAvailable==false}" ng-repeat="seat in seats | byCategory:'B'">{{seat.code}}</a>
+                <div class="list-group fixed-top">
+                    <a href="javascript:void(0)" class="list-group-item">NORMAL : ROW C</a>
+                </div>
+                 <a class="btn btn-default btn-xs seat-style" id="normal_c_{{$index+1}}" ng-click="setSeatSelected(seat)" ng-click="setSeatSelected(this,seat)" ng-class="{disabled:seat.isAvailable==false}" ng-repeat="seat in seats | byCategory:'C'">{{seat.code}}</a>
+              
+                <div class="list-group screen-eyes">
+                    <a href="javascript:void(0)" class="list-group-item">All EYES THIS WAY PLEASE</a>
+                </div>
+            </div>
+            <div class="panel-footer" ng-show="actselected">
+                    <button type="button" class="btn btn-danger btn-md" ng-click="checkout()">Proceed</button></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+body {
+    padding-top: 50px;
+}
+.navbar-inverse{
+    background-color:#D71A21;
+    border-color:#D71A21;
+    background-image:linear-gradient(to bottom,#D71A21 0,#A62E3A 100%)
+}
+.book-option{
+    /*background-color:#D71A21;*/
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 5px;
+    /*border:1px solid #D71A21;*/
+    /*background-image:linear-gradient(to bottom,#D71A21 0,#A62E3A 100%)*/
+}
+.select-date{
+    background-image:linear-gradient(to bottom,#D71A21 0,#A62E3A 100%);
+    color: white;
+}
+#book-option .active{
+    font-weight: bold;
+    border-bottom:2px solid #D71A21;
+    border-left:2px solid #D71A21;
+    border-right:2px solid #D71A21;
+}
+#book-option .inactive{
+    border-bottom: 2px solid #e6e6e6;
+    border-left: 2px solid #e6e6e6;
+    border-right: 2px solid #e6e6e6;
+    cursor: pointer;
+}
+.row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+#movieSelected .btn-custom-radius{
+    border-radius: 10px;
+    margin-right:4px;
+}
+.avilable-dates{
+    cursor: pointer;
+}
+.panel-footer{
+    text-align: center;
+}
+.seat-style{
+    margin-right: 5px;
+    padding: 2px;
+}
+.seat-selection{
+    margin-top: 20px;
+}
+.seat-selection-panel{
+    min-width: 570px;overflow: auto;text-align: center;
+}
+.fixed-top{
+    margin-top: 10px;
+}
+.screen-eyes{
+    margin-top: 20px;font-weight: bold;
+}

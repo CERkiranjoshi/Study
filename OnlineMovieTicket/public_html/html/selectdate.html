@@ -1,0 +1,10 @@
+<div class="row">
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-danger select-date"><span ng-click="back()" class="glyphicon glyphicon-chevron-left"></span>     Select Movie Date</li>
+        <li ng-click="selectDate(dates)" class="list-group-item avilable-dates" ng-repeat="dates in AvilableDates">
+            <span ng-show="{{$index}}==0">Today {{dates | date:' , dd MMM'}} </span>
+            <span ng-show="{{$index}}==1">Tomorrow {{dates | date:' , dd MMM'}} </span>
+            <span ng-show="{{$index}} > 1">{{dates | date:'EEEE , dd MMM'}} </span>
+        </li>
+    </ul>
+</div>

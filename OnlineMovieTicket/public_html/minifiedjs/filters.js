@@ -1,0 +1,1 @@
+"use strict";var AppFilters=angular.module("OnlineMovieTicketApp.filters",[]);AppFilters.filter("byCategory",function(){return function(r,e){for(var t=[],i=0;i<r.length;i++){var n=r[i];n.row==e&&t.push(n)}return t}});

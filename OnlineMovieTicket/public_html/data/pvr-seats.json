@@ -1,0 +1,363 @@
+{
+    "seats": [
+        {
+            "row": "A",
+            "code": "01",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "02",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "03",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "04",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "05",
+            "category":"GOLD",
+            "isAvailable": false
+        },
+        {
+            "row": "A",
+            "code": "06",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "07",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "08",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "09",
+            "category":"GOLD",
+            "isAvailable": false
+        },
+        {
+            "row": "A",
+            "code": "10",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "11",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "12",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "13",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "14",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "15",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "16",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "17",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "18",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "19",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "A",
+            "code": "20",
+            "category":"GOLD",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "01",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "02",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "03",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "04",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "05",
+            "category":"PRIME",
+            "isAvailable": false
+        },
+        {
+            "row": "B",
+            "code": "06",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "07",
+            "category":"PRIME",
+            "isAvailable": false
+        },
+        {
+            "row": "B",
+            "code": "08",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "09",
+            "category":"PRIME",
+            "isAvailable": false
+        },
+        {
+            "row": "B",
+            "code": "10",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "11",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "12",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "13",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "14",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "15",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "16",
+            "category":"PRIME",
+            "isAvailable": false
+        },
+        {
+            "row": "B",
+            "code": "17",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "18",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "19",
+            "category":"PRIME",
+            "isAvailable": true
+        },
+        {
+            "row": "B",
+            "code": "20",
+            "category":"PRIME",
+            "isAvailable": true
+        },{
+            "row": "C",
+            "code": "01",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "02",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "03",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "04",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "05",
+            "category":"NORMAL",
+            "isAvailable": false
+        },
+        {
+            "row": "C",
+            "code": "06",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "07",
+            "category":"NORMAL",
+            "isAvailable": false
+        },
+        {
+            "row": "C",
+            "code": "08",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "09",
+            "category":"NORMAL",
+            "isAvailable": false
+        },
+        {
+            "row": "C",
+            "code": "10",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "11",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "12",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "13",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "14",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "15",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "16",
+            "category":"NORMAL",
+            "isAvailable": false
+        },
+        {
+            "row": "C",
+            "code": "17",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "18",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "19",
+            "category":"NORMAL",
+            "isAvailable": true
+        },
+        {
+            "row": "C",
+            "code": "20",
+            "category":"NORMAL",
+            "isAvailable": true
+        }
+    ]
+}

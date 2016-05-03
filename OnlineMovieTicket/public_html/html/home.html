@@ -1,0 +1,38 @@
+
+<div class="row" id="book-option">
+    <div class="col-xs-6 col-md-6 book-option" ng-click="changeTab('movies')" ng-class="{active :tab == 'movies' , inactive:tab != 'movies'}">Movies</div>
+    <div class="col-xs-6 col-md-6 book-option" ng-click="changeTab('cinemas')" ng-class="{active :tab == 'cinemas' , inactive:tab != 'cinemas'}">Cinemas</div>
+</div>
+<div class="row" ng-if="tab == 'cinemas'">
+    <div class="col-xs-12 col-md-12" style="margin-top: 20px;">
+        <input type="text" placeholder="Search Cinemas Address" class="form-control" ng-model="search">
+        <br/>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="cinema in cinemas| filter:search" ng-class-odd="'list-group-item-info'" ng-class-even="'list-group-item-success'">
+                <span  ngc-bootstrap-tooltip title="Mark as your favourites"  style="float: right;cursor: pointer;" ng-click="setFavourites(cinema)" ng-class="{'glyphicon glyphicon-star-empty' : getClass(cinema) == true,'glyphicon glyphicon-star' : getClass(cinema) == false}"></span>
+                <div style="cursor: pointer;" ng-click="setCinemas(cinema)">
+                    <p><b>{{cinema.VenuName}}</b></p>
+                    <p>{{cinema.VenueAddress}}</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div id="movieSelected" class="row" ng-if="tab == 'movies'">
+    <div class="col-xs-12 col-md-12" style="margin-top: 20px;">
+        <input type="text" placeholder="Search Movies,Language,Genre" class="form-control" ng-model="search">
+        <br/>
+        <ul class="list-group">
+            <li class="list-group-item" style="cursor: pointer;"  ng-repeat="movie in movies| filter:search" ng-class-odd="'list-group-item-info'" ng-class-even="'list-group-item-success'" ng-click="setMovie(movie)">
+                <span style="float: right;cursor: pointer;"  class="glyphicon glyphicon-chevron-right"></span>
+                <div style="cursor: pointer;" ng-click="setMovie(movie)">
+                    <p><b>{{movie.EventTitle}}</b></p>
+                    <p><genre data="{{movie.Genre}}" ></genre><button type="button" class="btn btn-info btn-xs btn-circle btn-custom-radius">{{movie.Language}}</button></p>
+                    <p>{{movie.Length}}</p>
+                    <p>{{movie.Actors| limitTo:99}}...</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
