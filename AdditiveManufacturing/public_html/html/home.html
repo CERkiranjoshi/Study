@@ -1,0 +1,42 @@
+<div class="col-sm-6">
+    <h4>Home</h4>
+    <img src="images/dashboard.png" class="img-thumbnail" alt="Frontal Panel" width="600" height="600">
+</div>
+<div class="col-sm-6">
+    <div class="table-responsive" style="margin-top: 50px;font-size:12px;">
+        <table class="table table-bordered" st-table="printerStatusDetails">
+            <thead>
+                <tr>
+                    <th colspan="6">
+                        <input st-search placeholder="Search" class="input-sm form-control" type="search"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th st-sort="id">Sr No</th>
+                    <th>Industry</th>
+                    <th>Model Name</th>
+                    <th>Printer Name</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="printer in printerStatusDetails" ng-class-odd="'active'" ng-class-even="'even'">
+                    <td>{{printer.id}}</td>
+                    <td>{{printer.industry}}</td>
+                    <td>{{printer.modelname}}</td>
+                    <td>{{printer.printername}}</td>
+                    <td>{{printer.status}}</td>
+                    <td>{{printer.dateadded}}</td>
+                </tr>
+            </tbody>
+             <tfoot>
+                <tr>
+                    <td colspan="6" class="text-center">
+                        <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="6"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
