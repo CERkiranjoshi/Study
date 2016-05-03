@@ -1,0 +1,36 @@
+{
+    "width": 400,
+    "height": 250,
+    "colors": [],
+    "bar": {"groupWidth": "75%"},
+    "titleTextStyle":{},
+    "is3D": true,
+    "chartArea": {
+        "left": "15%",
+        "top": "10%",
+        "width": "80%",
+        "height": "75%"
+    },
+    "hAxis": {
+        "allowContainerBoundaryTextCufoff": true,
+        "slantedText": false,
+        "textStyle": {
+            "color": "black",
+            "bold": true
+        },
+        "gridlines": {
+            "count": -1,
+            "color": "white"
+        }
+    },
+    "vAxis":
+            {
+                "title": " % Target",
+                "titleTextStyle": {
+                    "color": "black",
+                    "bold": true,
+                    "italic": false,
+                    "fontSize": 13
+                }
+            }
+}

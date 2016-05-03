@@ -1,0 +1,47 @@
+<div class="row" >
+    <div  ng-include="'html/filter.html'"></div>
+    <div class="col-sm-5">
+        <div id="spDataGraph" style="width: 500px; height: 300px;"></div>
+        <div class="table-responsive" style="height:200px;margin-top: 5px;font-size:12px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>2016</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="da in SPWiseData" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>{{da.sp}}</b></td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2016'])}};background-color:{{getComplianceColor(da['year-2016'])}};" ng-if="da['year-2016'] > 0">{{da['year-2016']}}%</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-5" ng-if="selectedArea && mainTab == 3">
+        <div id="selectedSPGraph" style="width: 500px; height: 300px;"></div>
+        <div class="table-responsive" style="margin-top: 5px;font-size:12px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <!--<th>2015</th>-->
+                        <th>2016</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="da in filterSPData" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>{{da.sp}}</b></td>
+                        <!--<td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2015'])}};background-color:{{getComplianceColor(da['year-2015'])}};">{{da['year-2015']}}%</td>-->
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2016'])}};background-color:{{getComplianceColor(da['year-2016'])}};" ng-if="da['year-2016'] > 0">{{da['year-2016']}}%</td>
+                        <td ng-if="da['year-2016'] == 0"></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="row" >
+    <div  ng-include="'html/filter.html'"></div>
+    <div class="col-sm-4">
+        <div id="egGraph" style="width: 300px; height: 300px;"></div>
+        <div class="table-responsive" style="height:200px;margin-top: 5px;font-size:12px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>2016</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="da in egWiseData" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>{{da.eg}}</b></td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2016'])}};background-color:{{getComplianceColor(da['year-2016'])}};" ng-if="da['year-2016'] > 0">{{da['year-2016']}}%</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+    <div class="col-sm-3" ng-show="selectedEG && mainTab == 4">
+        <div id="egRepairClassGraph" style="width: 300px; height: 300px;"></div>
+        <div class="table-responsive" style="margin-top: 5px;font-size:12px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>2016</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="da in egRepairClassWiseData" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>{{da.eg}}</b></td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2016'])}};background-color:{{getComplianceColor(da['year-2016'])}};" ng-if="da['year-2016'] > 0">{{da['year-2016']}}%</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+    <div class="col-sm-3" ng-show="selectedEG && mainTab == 4">
+        <div id="egProductWiseGraph" style="width: 300px; height: 300px;"></div>
+        <div class="table-responsive" style="margin-top: 5px;font-size:12px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <!--<th>2015</th>-->
+                        <th>2016</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="da in egProductWiseData" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>{{da.eg}}</b></td>
+                        <!--<td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2015'])}};background-color:{{getComplianceColor(da['year-2015'])}};">{{da['year-2015']}}%</td>-->
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2016'])}};background-color:{{getComplianceColor(da['year-2016'])}};" ng-if="da['year-2016'] > 0">{{da['year-2016']}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

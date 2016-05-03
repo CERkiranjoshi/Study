@@ -1,0 +1,99 @@
+<div class="row" >
+
+    <div class="col-sm-4">
+        <h5 class="chartheader">SDCS</h5>
+        <div id="sdcsDonutGraph"  style="width: 400px; height: 200px;"></div>
+    </div>
+    <div class="col-sm-4">
+        <h5 class="chartheader">SDCS</h5>
+        <div id="sdcsColumnGraph" style="width: 400px; height: 200px;"></div>
+    </div>
+    <div class="col-sm-4">
+        <div class="table-responsive" style="font-size:11px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Range</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="color in colors" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td style="font-weight:bold;color:{{color.fontcolor}};background-color:{{color.color}};">{{color.type}}</td>
+                        <td><b>{{color.colorname}}</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive" style="font-size:11px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Target</th>
+                        <th>Actual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>SDCS</b></td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(85)}};background-color:{{getComplianceColor(85)}};">85%</td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(80)}};background-color:{{getComplianceColor(80)}};">80%</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="table-responsive" style="font-size:11px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>February'16</th>
+                        <th>March'16</th>
+                        <th>April'16</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>SDCS</b></td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(73)}};background-color:{{getComplianceColor(73)}};">73%</td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(90)}};background-color:{{getComplianceColor(90)}};">90%</td>
+                        <td  style="font-weight:bold;color:{{getComplianceFontColor(80)}};background-color:{{getComplianceColor(80)}};">80%</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row" >
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-6">
+        <div id="sdcsBarGraph"  style="width: 650px; height: 300px;"></div>
+    </div>
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-4">
+        <div class="table-responsive" style="font-size:11px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>2015</th>
+                        <th>2016</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="da in BarData" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>{{da.month}}</b></td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2015'])}};background-color:{{getComplianceColor(da['year-2015'])}};">{{da['year-2015']}}%</td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2016'])}};background-color:{{getComplianceColor(da['year-2016'])}};" ng-if="da['year-2016'] > 0">{{da['year-2016']}}%</td>
+                        <td ng-if="da['year-2016'] == 0"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

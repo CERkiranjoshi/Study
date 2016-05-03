@@ -1,0 +1,50 @@
+<div class="row" >
+    <div  ng-include="'html/filter.html'"></div>
+    <div class="col-sm-5">
+        <div id="regionGraph" style="width: 500px; height: 350px;"></div>
+        <div class="table-responsive" style="margin-top: 15px;font-size:12px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>2015</th>
+                        <th>2016</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="da in regionBarData" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>{{da.region}}</b></td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2015'])}};background-color:{{getComplianceColor(da['year-2015'])}};">{{da['year-2015']}}%</td>
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2016'])}};background-color:{{getComplianceColor(da['year-2016'])}};" ng-if="da['year-2016'] > 0">{{da['year-2016']}}%</td>
+                        <td ng-if="da['year-2016'] == 0"></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-5" ng-if="region && mainTab == 2">
+        <div id="cityGraph" style="width: 500px; height: 350px;"></div>
+        <div class="table-responsive" style="margin-top: 15px;font-size:12px;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <!--<th>2015</th>-->
+                        <th>{{selectedYear}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="da in regionCityBarData" ng-class-odd="'active'" ng-class-even="'even'">
+                        <td><b>{{da.region}}</b></td>
+                        <!--<td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2015'])}};background-color:{{getComplianceColor(da['year-2015'])}};">{{da['year-2015']}}%</td>-->
+                        <td style="font-weight:bold;color:{{getComplianceFontColor(da['year-2016'])}};background-color:{{getComplianceColor(da['year-2016'])}};" ng-if="da['year-2016'] > 0">{{da['year-2016']}}%</td>
+                        <td ng-if="da['year-2016'] == 0"></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
