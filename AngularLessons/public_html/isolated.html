@@ -1,0 +1,21 @@
+<a href="https://docs.angularjs.org/api/ng/service/$compile" target="_blank">directive</a>
+<a href="http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-i-the-fundamentals" target="_blank">in depth Understanding</a>
+
+<h3> 1) Isolated Scope with  =&  </h3>
+<isolated-scope-with-transclusion tasks="tasks" add="showdata()">
+    <div ng-repeat="task in tasks track by $index">
+        <strong>{{ task.title}}</strong>
+    </div>
+</isolated-scope-with-transclusion>
+<button class="btn btn-primary"  ng-click="showdata()" value="Show Task">Show Task</button>
+
+<h3> 2) Isolated Scope with @ The @ local scope property is used to access string values that are defined outside the directive. <a href="https://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-2-isolate-scope">link</a></h3>
+
+<div my-isolated-scope-with-name name="{{ data.time}}"></div>
+
+<h3> 3) = Used to create a two-way binding to an object that is passed into the directive <br/>
+    & Allows an external function to be passed into the directive and invoked </h3>
+<div my-isolated-scope-with-model-and-function 
+     datasource="customer" 
+     action="changeData()">
+</div>

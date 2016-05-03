@@ -1,0 +1,13 @@
+<div class="location-box location-header btn-group pull-right width-100" ng-controller="multiLocationController">
+	<button class="btn btn-default dropdown-toggle width-100" data-toggle="dropdown">
+		<span class="uno-icon-thin pull-left">c</span>
+		<span ng-repeat="location in selected_locations | orderBy:'name' | limitTo:1"><span ng-show="user.isStaff()">{{location.name}}</span><span ng-show="!user.isStaff()">{{location.display_name}}</span><span ng-show="!location">No Locations Selected</span></span>
+		<span ng-show="selected_locations.length==0">No Locations Selected</span>
+		<span ng-show="selected_locations.length>1"> + {{selected_locations.length-1}}</span>
+		<span class="caret pull-right top-7"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" ngc-eat-click>
+		<li ng-repeat="location in admin_locations | orderBy:'name'" ng-class="{'selected': selected_locations.indexOf(location) != -1}"><a href="" ng-click="selectLocation()"><span ng-show="user.isStaff()">{{location.name}}</span><span ng-show="!user.isStaff()">{{location.display_name}}</span></a></li>
+		<li><button class="btn btn-success right-10" ng-click="selectAllLocations('select')">Select All</button></li>
+	</ul>
+</div>

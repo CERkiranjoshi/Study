@@ -1,0 +1,109 @@
+.header .logo{ float:left;width:998px;}
+.header{height:100px; position:relative;}
+.inner{/*// top right bottom left*/
+    padding: 0px 0px 0px 0px;
+}
+html, body{font-family: 'Daxot-Regular', Arial, Helvetica, sans-serif !important; /* font-size: 10pt; */ width:100%; height:100%;color:#000; margin:0; padding:0;}
+.subhedertext{
+    margin-left: 10px;
+    padding-top: 30px;
+    font-weight: bold;
+    position: absolute;
+    font-size: 25px;
+    color: #5E5250;
+}
+.contactus{
+    float: right;
+    font-size: 14px;
+    color: #5E5250;
+    font-weight: bold;
+}
+#navbarsoln{
+    font-weight: bold;
+    text-transform: uppercase; 
+    padding: 5px 0 0;
+    margin:0 auto;
+    line-height: 0;
+    text-align: justify;
+    /*color: #655a58;*/
+    margin-top: 10px;
+    /* height: 42px; */
+}
+
+/*#navbarsoln{
+    margin:0 auto;
+}*/
+#navbarsoln ul	{
+    display:inline-block;
+}
+#navbarsoln ul li {
+    display:inline-block;
+    float:left;
+    margin: 0 1px 0 0;
+    padding-right: 20px;
+}
+#navbarsoln ul li a {
+    display:inline-block;
+    font-size:15px;
+    color:#5E5250;
+    padding: 20px 20px 27px 20px;
+    border-top:3px solid transparent;
+}
+
+
+#navbarsoln ul li a:hover
+{
+
+    display:inline-block;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .2);
+    border-color: #00a5e6;
+    background: #fff;
+    border-top:3px solid #3c80b5;
+    color: #3c80b5;
+}
+#navbarsoln ul li a.active
+{
+    display:inline-block;
+    box-shadow: 0 3px 5px 0 #3c80b5;
+    border-color: #00a5e6;
+    background: #fff;
+    border-top:3px solid #3c80b5;
+    color: #3c80b5;
+}
+.innerbox {
+    height: auto;overflow-y: auto;
+}
+/*.innerbox h2 {background:#0094ff;color:white;padding:10px;}*/
+/*.innerbox p {color:#333;padding:10px;}*/
+.innerbox {
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+}
+#addTransection td{
+    border: none;
+    width: 50%;
+}
+.active{
+    color:red !important;
+}.fade-animate {
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
+}
+
+.fade-animate.ng-enter {
+  opacity: 0;
+}
+
+.fade-animate.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.fade-animate.ng-leave {
+  opacity: 1;
+}
+
+.fade-animate.ng-leave.ng-leave-active {
+  opacity: 0;
+}

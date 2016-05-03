@@ -1,0 +1,51 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th colspan="3">Demo Routes List</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>
+                    <a ng-class="{active :tab == 'date'}" href="#/changeroutes/date">Datepicker Directive</a>
+                </td>
+                <td>
+                    <a ng-class="{active :tab == 'bindhtml'}" href="#/changeroutes/bindhtml">Ng-bind HTML Demo</a>
+                </td>
+                <td>
+                    <a ng-class="{active :tab == 'watch'}" href="#/changeroutes/watch">Ng-watch</a>
+                </td>
+                 <td>
+                    <a ng-class="{active :tab == 'httpservices'}" href="#/services/httpservices">HTTP</a>
+                </td>
+                <td>
+                    <a ng-class="{active :tab == 'httpservices'}" href="#/services/all">Service Types</a>
+                </td>
+                 <td>
+                    <a ng-class="{active :tab == 'filter'}" href="#/changeroutes/filter">Filters</a>
+                </td>
+                 <td>
+                    <a ng-class="{active :tab == 'cookies'}" href="#/cookies">cookies</a>
+                </td>
+                <td>
+                    <a ng-class="{active :tab == 'isolated'}" href="#/changeroutes/isolated">isolated-scope</a>
+                </td>
+                  <td>
+                    <a ng-class="{active :tab == 'tabsetissue'}" href="#/changeroutes/tabsetissue">tabsetissue</a>
+                </td>
+                <td>
+                    <a ng-class="{active :tab == 'class'}" href="#/changeroutes/class">ngClassEven-odd demo With Sortable Custom Directive </a>
+                </td>
+                <td>
+                    <a ng-class="{active :tab == 'example'}" href="#/example">Back To Main</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-if="tab == 'date'" ng-include="'dateexe.html'"></div>
+    <div ng-if="tab == 'bindhtml'" ng-include="'bindhtml.html'"></div>
+    <div ng-if="tab == 'class'" ng-include="'evenoddclass.html'"></div>
+    <div ng-if="tab == 'watch'" ng-include="'watchhtml.html'"></div>
+    <div ng-if="tab == 'filter'" ng-include="'filter.html'"></div>
+    <div ng-if="tab == 'isolated'" ng-include="'isolated.html'"></div>
+    <div ng-show="tab == 'tabsetissue'" ng-include="'tabsetissue.html'"></div>
+</div>

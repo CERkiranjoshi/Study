@@ -1,0 +1,93 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th colspan="4">Single Page Changeing View</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-link" ng-class="{active :tab == 1}" ng-click="setTabs(1)">Instant Binding</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-link" ng-class="{active :tab == 2}" ng-click="setTabs(2)">ng-init Example</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-link" ng-class="{active :tab == 3}" ng-click="setTabs(3)">ng-repeat Example</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-link" ng-class="{active :tab == 4}" ng-click="setTabs(4)">other Important Directives List</button>
+                </td>
+                <td>
+                    <a href="#/changeroutes">Changing Routes Demo</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div ng-show="tab == 1">
+        <div class="page-header">
+            <h3>Angular Js Instant Binding </h3> 
+            <form class="form-horizontal" method="post" name="form">
+                <div class="form-group" >
+                    <label for="myname">Enter Your Name :</label>
+                    <input type="text" id="myname" name="myname" ng-model="myname" class="form-control" required placeholder="Enter  Your Name *">
+                </div> 
+                <div class="form-group" >
+                    <label for="myname">select type :</label>
+                    <select ng-model="mytp">
+                        <option value="select type">select type</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div> 
+                <div class="form-group" >
+                    <input type="button" id="btnsubmit" name="btnsubmit" ng-click="addData()" class="form-control btn btn-primary btn-sm" value="Submit"/>
+                </div> 
+            </form>
+
+            <p>Your  Name :{{myname}}</p> 
+        </div>
+    </div>
+    <div ng-if="tab == 2">
+        <div class="page-header" ng-init="quantity = 1;
+                        price = 5">
+            <h3>Angular Js Ng-init  </h3> 
+
+            Quantity: <input type="number"	ng-model="quantity">
+            Costs:    <input type="number" ng-model="price">
+
+            Total in dollar: {{ quantity * price}}
+        </div>
+    </div>
+
+    <div ng-if="tab == 3">
+        <div class="page-header" ng-controller="repeatController">
+            <h3>Angular Js Ng-init  </h3> 
+            <ul>
+                <li ng-repeat="x in names">
+                    {{ x.name + ', ' + x.country}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div ng-if="tab == 4">
+        <div class="page-header">
+            <h3>ng-view  </h3> 
+            <h3>ng-click  </h3> 
+            <h3>ng-include  </h3> 
+            <h3>ng-view  </h3> 
+            <h3>ng-show  </h3> 
+            <h3>ng-hide  </h3> 
+            <h3>ng-if  </h3> 
+            <h3>ngController </h3> 
+            <h3>ngClass </h3> 
+            <h3>ngClassEven </h3> 
+            <h3>ngClassOdd </h3> 
+            <h3>ngBindHtml </h3> 
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div id="error-module" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="error-module" aria-hidden="true">
+    <div class="modal-dialog modal-error">
+        <div class="modal-content" ng-class="{'break-radius': error.type == 'readtest'}">
+            <div class="modal-header">
+                <button ng-hide=" error.type == 'confirm' || error.type == 'continue'" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{error.title}}<span ng-show="error.type != 'readtest'">!</span></h4>
+            </div>
+            <div class="modal-body">
+                <p ng-show="error.type != 'readtest'">{{error.notification}}</p>
+                <div ng-show="error.type == 'readtest'" class="center">
+                    <button class="btn btn-success no-rad col-42 bot-10" ng-click="errorResolution(true)">{{error.choices[0]}}</button><br>
+                    <button class="btn btn-danger no-rad col-42" ng-click="errorResolution(false)">{{error.choices[1]}}</button>
+                </div>
+            </div>
+            <div class="modal-footer" ng-show="error.type != 'readtest'">
+                <button ng-show=" error.type == 'confirm'" class="btn btn-default modal-btn pull-left" data-dismiss="modal" aria-hidden="true" ng-click="errorResolution(false)">No</button>
+                <button ng-show=" error.type == 'confirm'" class="btn btn-danger modal-btn pull-right" ng-click="errorResolution(true)">Yes</button>
+                <button ng-show=" error.type == 'message'" class="btn btn-default modal-btn pull-right" data-dismiss="modal" aria-hidden="true">OK</button>
+                <button ng-show=" error.type == 'continue'" class="btn btn-default modal-btn pull-left" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <button ng-show=" error.type == 'continue'" class="btn btn-default modal-btn pull-right" ng-click="errorResolution(true)">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>

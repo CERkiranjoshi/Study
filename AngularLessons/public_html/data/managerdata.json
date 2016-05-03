@@ -1,0 +1,78 @@
+[
+    {
+        "id": "1",
+        "depid": "1",
+        "name": "Purushotham",
+        "department": [
+            {
+                "name": "IT",
+                "depid": "1"
+            },
+            {
+                "name": "Networking",
+                "depid": "2"
+            }
+        ],
+        "details": {
+            "address": "vikhoroli west",
+            "dob": "13-05-1970"
+        }
+    },
+    {
+        "id": "2",
+        "depid": "1",
+        "name": "Madhuran D'silva",
+        "department": [
+            {
+                "name": "IT",
+                "depid": "1"
+            },
+            {
+                "name": "Networking",
+                "depid": "2"
+            }
+        ],
+        "details": {
+            "address": "vikhoroli west",
+            "dob": "13-05-1970"
+        }
+    },
+    {
+        "id": "3",
+        "depid": "2",
+        "name": "sandeep Gawde",
+        "department": [
+            {
+                "name": "IT",
+                "depid": "1"
+            },
+            {
+                "name": "Networking",
+                "depid": "2"
+            }
+        ],
+        "details": {
+            "address": "vikhoroli west",
+            "dob": "13-05-1970"
+        }
+    },
+    {
+        "id": "4",
+        "name": "Xyz",
+        "depid": "2",
+        "department": [
+            {
+                "name": "IT",
+                "depid": "1"
+            },
+            {
+                "name": "Networking",
+                "depid": "2"
+            }
+        ],
+        "details": {
+            "address": "vikhoroli west",
+            "dob": "13-05-1970"
+        }
+    }
+]

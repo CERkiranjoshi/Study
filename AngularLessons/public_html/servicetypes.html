@@ -1,0 +1,39 @@
+
+<h3>{{message}}</h3>
+
+<h5>NOTE: A singleton is a design pattern that restricts the instantiation of a class to just one object. Every place where we inject our service, will use the same instance.</h5>
+<a href="http://viralpatel.net/blogs/angularjs-service-factory-tutorial/" target="_blank">Description</a>
+
+<div class="page-header">
+    <h4>Provider</h4> 
+    <h4>Factory</h4> 
+    <h4>Value</h4> 
+    <h4>Service</h4> 
+    <h4>Constant</h4> 
+    <h4>Decorator</h4> 
+</div>
+<h3>1)Provider</h3>
+parent of almost all the other services :complex: we can configure a provider in the config function.
+<a href="http://angular-tips.com/blog/2013/08/understanding-service-types/" target="_blank"> Link</a>
+<h3>2)Factory</h3>
+<a href="http://jsfiddle.net/k3phygpz/" target="_blank">Example</a>
+we moved our provider $get function into a factory;
+easy to use
+
+<h3>3)Value</h3>
+
+Factory is good, but what if I just want to store a simple value? I mean, no injections, just a simple value or object.
+
+<h3>4)Services</h3>
+service receives a constructor function
+<a href="#/services/service">Example</a>
+<a href="http://www.codelord.net/2015/04/28/angularjs-whats-the-difference-between-factory-and-service/" target="_blank"> difference bet Service & factory</a>
+
+<h3>5)Constant</h3>
+A constant works much the same as a value:
+A constant can be injected everywhere and that includes provider constructor and config functions. AND Note: The constant service cannot be decorated.
+WHere <b>Value</b> can’t be injected into provider constructor or config functions.
+
+Note : Constant Value Can Be Modified..
+<h3>6)Decorator</h3>
+decorate services comes in handy when we are consuming 3rd party services and we want to decorate it without having to copy it in our project and then doing there the modifications.

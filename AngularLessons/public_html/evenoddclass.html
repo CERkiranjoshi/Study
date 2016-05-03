@@ -1,0 +1,8 @@
+<ul class="list-group" ngc-eat-click ngc-sortable="clist">
+    <li ng-repeat="cl in clist | filter : bytype" class="list-group-item " ng-class-odd="'list-group-item-success'" ng-class-even="'list-group-item-danger'">{{cl.country}} -- {{cl.capital}}</li>
+</ul>
+<button type="button" class="btn btn-default btn-sm" ng-click="showSortOrder()">Show Sort Order</button>
+
+
+<a href="https://jqueryui.com/sortable/" target="_blank">sortable Jquery demo</a>
+<a href="http://api.jqueryui.com/sortable/" target="_blank">sortable Jquery Documentation</a>

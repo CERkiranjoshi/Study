@@ -1,0 +1,53 @@
+<h1>simple get data from existing Location or from Web services</h1>
+
+<ul class="list-group" >
+    <li ng-repeat="mn in manager" class="list-group-item " ng-class-odd="'list-group-item-success'" ng-class-even="'list-group-item-danger'">{{mn.id}} -- {{mn.name}}</li>
+</ul>
+
+<h1>Send Form Data Or Any Other </h1>
+<form class="form-horizontal" method="post" name="form" valid-Submit="setData()" novalidate>
+    <div class="form-group" ng-class="{'has-error' : form.$submitted && (blockaccount.bank == 'Select bank'), 'has-success': form.$submitted && (blockaccount.bank != 'Select bank')}">
+        <label for="bank">Block Account Bank Name :</label>
+        <select class="select error form-control" id="Selectbank" name="bank" ng-model="blockaccount.bank" required>
+            <option value="Select bank">Select bank</option>
+            <option value="ICICI">ICICI</option>
+            <option value="HDFC">HDFC</option>
+            <option value="SBI">SBI</option>
+        </select>
+    </div>
+    </br>
+    <div style="clear: both;"></div>
+    <div class="form-group" ng-class="{'has-error': form.$submitted && form.blockvalue.$invalid, 'has-success': form.$submitted && form.blockvalue.$valid}">
+        <label for="blockvalue">Block Account Value :</label>
+        <input type="text" id="blockvalue"  ng-minlength="9" ng-maxlength="18" name="blockvalue" ng-model="blockaccount.blockvalue" class="form-control" required placeholder="Block Account Value *">
+    </div>
+    </br>
+    <div style="clear: both;"></div>
+    <div class="form-group"><button type="submit" class="btn btn-primary pull-right" >Submit</button></div>
+</form>
+<div ng-show="blockaccounts.length > 0"> 
+    <h1>Block Accounts </h1>
+    <ul class="list-group" >
+        <li ng-repeat="bl in blockaccounts" class="list-group-item fade-animate" ng-class-odd="'list-group-item-success'" ng-class-even="'list-group-item-danger'">{{bl.id}} -- {{bl.bank}} -- {{bl.blockvalue}}</li>
+    </ul>
+</div>
+<a href="http://www.nganimate.org/angularjs/tutorial/how-to-make-animations-with-angularjs" target="_blank"> nganimate link 1</a>
+<a href="https://css-tricks.com/animations-the-angular-way/" target="_blank"> nganimate link 2</a>
+<div class="row">
+    <div class="col-md-3">
+        <div class="input-group">
+            <input name="country" placeholder="Prefix" class="form-control input-sm" style="float: left; width: 20%;" title="Prefix" type="text">
+            <input name="phonenum" placeholder="Number" class="form-control input-sm" style="float: left; width: 80%;" type="text">
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-3">
+            <input name="country" ng-model="actualdata" placeholder="Prefix" class="form-control input-sm" title="Prefix" type="text">
+    </div>
+    <button ng-click="saveData()"> Save</button>
+</div>
+
+<span>{{username}}</span>

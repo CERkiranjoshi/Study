@@ -1,0 +1,84 @@
+<h3>List of Filter Changing the way you see things</h3>
+<div class="page-header">
+    <h4>currency</h4> 
+    <h4>number</h4> 
+    <h4>date</h4> 
+    <h4>lowercase</h4> 
+    <h4>uppercase</h4> 
+    <h4>json</h4> 
+    <h4>limitTo</h4> 
+    <h4>orderBy</h4> 
+    <h4>filter</h4> 
+    <h4>Custom Filter</h4> 
+</div>
+<h3> 1) Filter currency</h3>
+<!--In HTML Template Binding-->
+<input type="number" ng-model="mydata.amount" aria-label="amount"> <br>
+default currency symbol ($): <span id="currency-default">{{mydata.amount| currency}}</span><br>
+custom currency identifier (USD$): <span id="currency-custom">{{mydata.amount| currency:"USD$"}}</span>
+no fractions (0): <span id="currency-no-fractions">{{mydata.amount| currency:"USD$":0}}</span>
+
+<h3> 2) Filter Number</h3>
+<label>Enter number: <input ng-model='mydata.val'></label><br>
+Default formatting: <span id='number-default'>{{mydata.val| number}}</span><br>
+No fractions: <span>{{mydata.val| number:0}}</span><br>
+Negative number: <span>{{-mydata.val| number:4}}</span>
+
+<h3> 3) Date</h3>
+<span style="font-weight: bold">1288323623006 | date:'medium'</span>   :-    {{1288323623006| date:'medium'}} <br/>
+<span style="font-weight: bold">1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'</span>   :-      {{1288323623006| date:'yyyy-MM-dd HH:mm:ss Z'}}<br/>
+<span style="font-weight: bold">1288323623006 | date:'MM/dd/yyyy @ h:mma'</span>   :-     {{1288323623006| date:'MM/dd/yyyy @ h:mma'}}<br/>
+<span style="font-weight: bold">1288323623006 | date:"MM/dd/yyyy 'at' h:mma"</span>   :-      {{1288323623006| date:"MM/dd/yyyy 'at' h:mma"}}
+
+<h3> 4)Filter Upper case</h3>
+<input type="text" class="form-control no-focus"  ng-model="mydata.fname"  placeholder="Enter your First name">
+
+<div>{{mydata.fname| uppercase}}</div>
+
+<h3> 5) Filter Lower case</h3>
+<input type="text" class="form-control no-focus"  ng-model="mydata.lname" placeholder="Enter your Last name">
+
+<div>{{mydata.lname| lowercase}}</div>
+
+<h3> 6) Json</h3>
+
+<pre id="default-spacing">{{ mydata | json }}</pre>
+<pre id="custom-spacing">{{ mydata | json:4 }}</pre>
+
+<h3> 7) Limit To</h3>
+<p>Output First  name: {{ mydata.fname | limitTo:5 }}</p>
+<p>Output First  name: {{ mydata.lname | limitTo:3 }}</p>
+<h4>Country List Array</h4>
+<pre id="default-spacing">{{ clist | json }}</pre>
+<h4>Output With  limitTo_expression | limitTo : limit : begin </h4>
+<ul class="list-group">
+    <li ng-repeat="cl in clist| limitTo:2:2" class="list-group-item " >{{cl.country}} -- {{cl.capital}}</li>
+</ul>
+
+<h3> 7) orderBy</h3>
+<h4>Normal Order By -id Desc </h4>
+<ul class="list-group">
+    <li ng-repeat="cl in clist| orderBy:'-id'" class="list-group-item " >{{cl.id}} -- {{cl.country}} -- {{cl.capital}}</li>
+</ul>
+
+<h4>Sorting Functionality Using Order By  {{predicate}} -- {{reverse}} </h4>
+<a href="" ng-click="reverse = !reverse;
+    order('id', reverse)"> ID </a>
+<a href="" ng-click="reverse = !reverse;
+    order('country', reverse)">Country</a>
+<a href="" ng-click="reverse = !reverse;
+    order('capital', reverse)">Capital</a>
+<ul class="list-group">
+    <li ng-repeat="cl in clist" class="list-group-item " >{{cl.id}} -- {{cl.country}} -- {{cl.capital}}</li>
+</ul>
+<h3> 8) Filter</h3>
+<input type="text" class="form-control no-focus"  ng-model="search"  placeholder="search by ID, Country, Capital">
+<ul class="list-group">
+    <li ng-repeat="cl in clist | filter:search" class="list-group-item " >{{cl.id}} -- {{cl.country}} -- {{cl.capital}}</li>
+</ul>
+<h3> 8) Custom Filter</h3>
+<h4>Search voter age in Country</h4>
+<input type="number" class="form-control no-focus"  ng-model="voterlimit"  placeholder="search by Voter Age">
+<ul class="list-group">
+    <li ng-repeat="cl in clist | canvote:voterlimit" class="list-group-item " >{{cl.id}} -- {{cl.country}} -- {{cl.voterage}}</li>
+</ul>
