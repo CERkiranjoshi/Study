@@ -1,0 +1,382 @@
+<html class="gt-ie8 gt-ie9 not-ie" ng-app="bajajfinserv"  ng-controller="validatetest">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Apply for Home Loan online in India - Bajaj Finserv Home Loan</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- Open Sans font from Google CDN -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+        <link href="css/custom.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+
+        <!--<link href="../PixelAdmin-1.3.0/angular-js/bootstrap/datetimepicker/style.css" rel="stylesheet">-->
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="angular-js/lib/angular.min.js"></script>
+        <script type="text/javascript" src="angular-js/lib/angular-route.min.js"></script>
+        <script type="text/javascript" src="angular-js/app.js"></script>
+        <script type="text/javascript" src="angular-js/directives.js"></script>
+        <script type="text/javascript" src="angular-js/bajajfinserv.js"></script>
+        <script type="text/javascript" src="angular-js/services.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="//platform.linkedin.com/in.js">
+            api_key:   77x5mjssbqbqt6
+            authorize: false
+        </script>
+        <style>
+            select{
+                width: 75px;
+            }
+            .errorctrl{
+                font-size: 13px;
+                color: #a94442;
+                /*padding: 4px;*/
+            }
+            table{
+                border-collapse:separate; 
+                border-spacing:0.5em; 
+            }
+            .links2 {
+                font-size: small;
+                float: left;
+                text-transform: inherit;
+                line-height: 43px;
+                width: 100%;
+            }
+            .has-error-select {
+                border: 1px solid #a94442;
+            }
+            .has-success-select {
+                border: 1px solid #cccccc;
+            }
+            .form-group {
+                margin: 0 !important;
+            }
+            .list-group-item{
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+            /*
+                        .tooltip.top .tooltip-arrow {
+            
+                            border-top-color: #78c7ec;
+                        }
+                        .tooltip-inner {
+                            background-color: #f5f7f9;
+                            color: black;
+            
+                        }*/
+        </style>
+        <script>
+                    $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            });</script>
+    </head>
+    <body>
+
+        <div>
+            <div class="header" style="background: #fff;border-bottom: none;">
+                <div style="margin: 0 auto; width: 998px;">
+                    <div id="MainHeader">
+                        <div class="logo" >
+                            <div class="bflLogo" style="float: left;">
+                                <img src="images/bfslogo.png" alt="Bajaj Finserv Lending" height="49" width="272">
+                            </div>
+                            <div style="float: right;">
+                                <div style="height: 30px;"></div>
+                                <div class="clear"></div>
+                                <div class="trackApp">
+                                    <a class="AppTracker" href="javascript:void(0);">Track application </a>
+                                    <a class="OpenAlready" href="javascript:void(0);">Resume a previously saved form</a>
+                                    <a class="OpenHelp" href="javascript:void(0);" style="border:none">Need help?</a>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="page">
+                <div id="Tab">
+                    <ul>
+                        <li class="selected">
+                            <a><span><img src="images/account-Img.png"></span> My Details</a>
+                        </li>
+                        <li style="width: 15%;">
+                            <a><span><img src="images/application-Img.png"></span> Application Details</a>
+                        </li>
+                        <li style="width: 15%;">
+                            <a><span><img src="images/youroffer-Img.png"></span> Your Offer</a>
+                        </li>
+                        <li style="width: 15%;">
+                            <a><span><img src="images/property-Img.png"></span> Property Details</a>
+                        </li>
+                        <li style="width: 15%;">
+                            <a><span><img src="images/loanDisbrsal-Img.png"></span>  Additional Details</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <div class="wrapper1">
+                    <div class="tab-content form" id="CreateAccount" style="display: block;overflow: none !important;">
+                        <div>
+                            <div class="formHeadT">
+                                <h4 style="margin-left: 23px;font-size: 15px;">My Details </h4>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <!--<form id="jq-validation-form" method="post" name="form" class="form-horizontal" valid-Submit="setActivTab('problem', 'incident')" novalidate>-->
+                        <form class="form-horizontal" method="post" name="form" valid-Submit="validatedata()" novalidate>
+                            <table style="width:100%">
+                                <tr>
+                                    <td>
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.fname.$invalid, 'has-success': form.$submitted && form.fname.$valid}">
+                                            <input data-toggle="tooltip" data-placement="top" title="Your first name should be the same as on your PAN card.!" type="text" name="fname" ng-model="details.fname" class="form-control" required placeholder="First Name *">
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.fname.$invalid">You need to enter your First Name.</span>
+                                    </td>
+                                    <td>
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.mname.$invalid, 'has-success': form.$submitted && form.mname.$valid}">
+                                            <input type="text" id="mname" name="mname" ng-model="details.mname" class="form-control" required placeholder="Middle Name *">
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.mname.$invalid">You need to enter your Middle Name.</span>
+                                    </td> 
+                                    <td>
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.lname.$invalid, 'has-success': form.$submitted && form.lname.$valid}">
+                                            <input type="text" data-toggle="tooltip" data-placement="top" title="Your last name should be the same as on your PAN card.!" id="lname" name="lname" ng-model="details.lname" class="form-control" required placeholder="Last Name *">
+
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.lname.$invalid" >You need to enter your Last Name.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> 
+                                        <div class="form-group">
+                                            <span>Gender:  &nbsp;&nbsp;</span>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="sex" ng-model="details.gender" value="male"> Male 
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="sex" ng-model="details.gender" value="female">  Female 
+                                            </label>
+                                            <!--                                            Gender &nbsp;&nbsp;&nbsp;<input type="radio" name="sex" ng-model="details.gender" value="male">Male
+                                                                                        &nbsp;&nbsp;&nbsp;<input type="radio" name="sex" ng-model="details.gender" value="female"> Female -->
+                                        </div>
+                                    </td>
+                                    <td colspan="2">
+                                        <div style="width: 100px;float: left;margin-right: 18px;margin-top: 25px;">Date of Birth?</div>
+                                        <div class="form-group" ng-class="{'has-error' : form.$submitted && (details.birthday.bdate=='DD'), 'has-success': form.$submitted && (details.birthday.bdate!='DD')}" style="width: 100px;float: left;">  <select style="width: 75px;" class="select error form-control" name="bdate" ng-model="details.birthday.bdate" id="Select8"  required>
+                                                <option value="DD">DD</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select></div>&nbsp;&nbsp;&nbsp;
+                                        <div class="form-group" ng-class="{'has-error' : form.$submitted && (details.birthday.bmonth=='MMM'), 'has-success': form.$submitted && (details.birthday.bmonth!='MMM')}" style="width: 100px;float: left;">
+                                            <select style="width: 85px;" class="select error form-control" id="Select9" name="bmonth" ng-model="details.birthday.bmonth" required>
+                                                <option value="MMM">MMM</option>
+                                                <option value="Jan">Jan</option>
+                                                <option value="Feb">Feb</option>
+                                                <option value="Mar">Mar</option>
+                                                <option value="Apr">Apr</option>
+                                                <option value="May">May</option>
+                                                <option value="Jun">Jun</option>
+                                                <option value="Jul">Jul</option>
+                                                <option value="Aug">Aug</option>
+                                                <option value="Sep">Sep</option>
+                                                <option value="Oct">Oct</option>
+                                                <option value="Nov">Nov</option>
+                                                <option value="Dec">Dec</option>
+                                            </select></div>&nbsp;&nbsp;&nbsp;
+                                        <div class="form-group"  ng-class="{'has-error' : form.$submitted && (details.birthday.byear=='YYYY'), 'has-success': form.$submitted && (details.birthday.byear!='YYYY')}" style="width: 100px;float: left;">     
+                                            <select style="width: 95px;"  class="select error form-control" id="Select10" name="byear" ng-model="details.birthday.byear" required>
+                                                <option value="YYYY">YYYY</option>
+                                                <option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option><option value="1939">1939</option><option value="1940">1940</option><option value="1941">1941</option><option value="1942">1942</option><option value="1943">1943</option><option value="1944">1944</option><option value="1945">1945</option><option value="1946">1946</option><option value="1947">1947</option><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option>
+                                            </select>
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && (details.birthday.byear=='YYYY' || details.birthday.bmonth=='MMM' || details.birthday.bdate=='DD')" >This information is mandatory. Please enter your correct date of birth.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.mnumber.$invalid, 'has-success': form.$submitted && form.mnumber.$valid}">
+                                            <input type="number" ng-minlength="10" ng-maxlength="10" data-toggle="tooltip" data-placement="top" title="You will receive your mobile verification code on this number." name="mnumber" required ng-model="details.mnumber" class="form-control" placeholder="Mobile Number *">
+
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.mnumber.$invalid">Please fill in your 10 digit mobile number.</span>
+                                    </td>
+                                    <td>
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.email.$invalid, 'has-success': form.$submitted && form.email.$valid}">
+                                            <input type="email" data-toggle="tooltip" data-placement="top" title="You will receive your e-mail verification code on this e-mail ID." id="email" name="email" required ng-model="details.email" class="form-control" placeholder="Official E-mail Address *">
+
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.email.$invalid">Please enter the correct e-mail ID.</span>
+                                    </td> 
+                                    <td>
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.pan.$invalid, 'has-success': form.$submitted && form.pan.$valid}">
+                                            <input type="text" data-toggle="tooltip" data-placement="top" title="Enter your unique Permanent Account Number (PAN) issued to by the Indian Income Tax Department." id="pan" name="pan" ng-model="details.pan" required class="form-control" placeholder="PAN Card *">
+
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.pan.$invalid">Enter your correct PAN card Number.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-group" >
+                                            <select class="select form-control" required id="selectCity" name="selectCity" ng-model="details.selectCity" ng-change="doChange()" ng-class="{
+                                                    'has-error-select'
+                                                            : form.$submitted && form.state.$invalid, 'has-success-select': form.$submitted && form.state.$valid}">
+                                                <option value="Select City*">Select City*</option>
+                                                <option value="{{city}}" ng-repeat="city in citys">{{city.city}}</option>
+                                                <!--<option value="Ahmedabad">Ahmedabad</option><option value="Bangalore">Bangalore</option><option value="Chennai">Chennai</option><option value="Delhi">Delhi</option><option value="Faridabad">Faridabad</option><option value="Ghaziabad">Ghaziabad</option><option value="Gurgaon">Gurgaon</option><option value="Hyderabad">Hyderabad</option><option value="Kolkata">Kolkata</option><option value="Mumbai">Mumbai</option><option value="Noida">Noida</option><option value="Pune">Pune</option><option value="Thane">Thane</option><option value="AURANGABAD">AURANGABAD</option><option value="COIMBATORE">COIMBATORE</option><option value="JAIPUR">JAIPUR</option><option value="SURAT">SURAT</option><option value="BARODA">BARODA</option><option value="NASIK">NASIK</option><option value="VIJAYAWADA">VIJAYAWADA</option><option value="COCHIN">COCHIN</option><option value="VIZAG">VIZAG</option><option value="NAGPUR">NAGPUR</option><option value="MADURAI">MADURAI</option>-->
+                                            </select>
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.state.$invalid">Kindly select a valid city from the list.</span>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="text" id="state" name="state" required ng-model="details.state" class="form-control" readonly="readonly" placeholder="State">
+                                        </div>
+                                    </td> 
+                                    <td>
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.pincode.$invalid, 'has-success': form.$submitted && form.pincode.$valid}">
+                                            <input type="text" required ng-minlength="6" ng-maxlength="6" id="pincode" data-toggle="tooltip" data-placement="top" title="Enter your 6 digit pin code." name="pincode" ng-model="details.pincode" class="form-control" placeholder="Residance Pincode">
+
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.pincode.$invalid" >Please enter a correct Pin Code.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="form-group">
+                                            <input type="text" id="searchemp" name="searchemp" data-toggle="tooltip" data-placement="top" title="
+                                                   Kindly type slowly to search your employer, if not found please select others"  required ng-model="details.searchemp" class="form-control" placeholder="Current Employer *" ngc-eat-click></li>
+
+
+                                            <ul class="list-group" ng-show="showul" style="position: absolute;width: 100%;margin-left: -38px;">
+                                                <!--<li><input ng-model="fullFilter" ngc-enter-search="searchBox()" class="form-control no-focus no-rad" placeholder="Search by id or name" ngc-eat-click></li>-->
+                                                <li class="clickable list-group-item" ng-repeat="emp in Employers| filter : searchByemp" ng-click="setEmp(emp);"><small>{{emp}}</small></li>
+                                            </ul>
+                                        </div>
+                                        <!--<div class="form-group btn-group generic-dropdown no-rad dropdown" >
+                                                                                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                                                                        {{copyBox.name || 'Individual'}} <span class="caret pull-right top-7"></span>
+                                                                                                                </button>
+                                                                                                                <ul class="dropdown-menu" role="menu">
+                                                                                                                        <li><input ng-model="fullFilter" ngc-enter-search="searchBox()" class="form-control no-focus no-rad" placeholder="Search by id or name" ngc-eat-click></li>
+                                                                                                                        <li class="clickable" ng-repeat="box in general | filter: copyFilter" ng-click="copyBoxdata(box)"><a>{{box.id}} - {{box.name}}</a></li>
+                                                                                                                </ul>
+                                                                                                        </div>-->
+
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.pincode.searchemp">Company is not listed, please type others.</span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.salarym1.$invalid, 'has-success': form.$submitted && form.salarym1.$valid}">
+                                            <input type="text" id="salarym1" name="salarym1" data-toggle="tooltip" data-placement="top" title="
+                                                   Kindly Fill in your Latest Net Salary as per August 2015 pay slip."  ng-model="details.salarym1" required class="form-control" placeholder="Latest New Salery Month 1 *">
+
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.salarym1.$invalid">Please Enter Valid amount.</span>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="form-group" ng-class="{
+                                                'has-error'
+                                                        : form.$submitted && form.salarym2.$invalid, 'has-success': form.$submitted && form.salarym2.$valid}">
+                                            <input type="text" id="salarym2" name="salarym2" ng-model="details.salarym2" data-toggle="tooltip" data-placement="top" title="
+                                                   Kindly Fill in your Latest Net Salary as per July 2015 pay slip."  class="form-control" required placeholder="Latest New Salery Month 2 *">
+
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        <span class="errorctrl" ng-show="form.$submitted && form.salarym2.$invalid">Please Enter Valid amount.</span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="button" class="btn btn-primary" ng-click="doLogin()">Login with Linked-In Profile</button>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </form>
+                    </div>
+                    <div class="page-header" style="border-bottom:none;margin: 15px;">
+                        <div class="links" style="font-size: 12px;padding: 10px;">
+                            <a href="http://www.bajajfinserv.in/privacy.aspx" target="_blank">PRIVACY</a>  
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div class="links2">
+                            <img alt="bajaj-finserv-logo" height="36" src="images/blogo.png" style="float: left;" width="36">
+                            <p style="text-indent: 0;margin: 10px 0;line-height: normal">Bajajfinserv.in is a source of information, as well as access to financial services provided by the Bajaj Finserv companies.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>
