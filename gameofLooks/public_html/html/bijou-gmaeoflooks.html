@@ -1,0 +1,54 @@
+<div class="row team-list">
+    <div class="col-sm-2 col-inside" ng-repeat="team in teams | limitTo:6">
+        <!--<div class="col-sm-2" ng-class="{'col-left':$index == 0,'col-right':$index == 5,'col-inside':$index != 0 && $index != 5}" ng-repeat="team in teams| limitTo:6">-->
+        <uib-accordion>
+            <div uib-accordion-group class="team-panel panel-default panel-default-{{team.team_colour| lowercase}}" is-open="true">
+                <uib-accordion-heading><span>{{team.team_name}}</span></uib-accordion-heading>
+                <div class="row" style="padding: 15px;padding-top: 0px;padding-bottom: 10px;">
+                    <div class="col-sm-12 product-info" ng-if="team.team_colour != 'Yellow' && team.team_colour != 'White'" style="border-color: {{team.colour_hex}};color:{{team.colour_hex}}; ">{{team.products_bought}}/{{team.team_strength}}<span  ng-show="team.team_rank>0" class="winner-team-rank">#{{team.team_rank}}</span></div>
+                    <div class="col-sm-12 product-info" ng-if="team.team_colour == 'Yellow' || team.team_colour == 'White'" >{{team.products_bought}}/{{team.team_strength}}<span  ng-show="team.team_rank>0" class="winner-team-rank">#{{team.team_rank}}</span></div>
+                </div>
+                <div class="team-house">
+                    <div class="row">
+                        <div class="col-xs-6" style="padding-right: 2px;">
+                            <ul  class="list-group team-member">
+                                <li ng-class="{'team-captain':member.is_captain}" class="team-member-list list-group-item list-group-item-{{team.team_colour| lowercase}}" ng-repeat="member in team.team_members| limitTo : team.limit : 0">{{member.nick_name| limitTo:6}}</li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6" style="padding-left: 2px;">
+                            <ul  class="list-group team-member">
+                                <li ng-class="{'team-captain':member.is_captain}" class="team-member-list list-group-item list-group-item-{{team.team_colour| lowercase}}" ng-repeat="member in team.team_members| limitTo : team.team_members.length : team.limit">{{member.nick_name| limitTo:6}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-inside">
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="true">
+                <uib-accordion-heading>Products purchased feed</uib-accordion-heading>
+                <div id="product-purchased" class="bottom-feed">
+                    <div class="row">
+                        <div class="col-xs-12 vticker">
+                            <ul class="list-group" id="newsfeed">
+                                <li class="news-item list-group-item list-group-item-{{feed.product_colour| lowercase}}" ng-repeat="feed in feeds">{{feed.user}} from {{feed.team_name}} has bought {{feed.product}}.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>
+    </div>
+    <div class="col-sm-6 col-inside">
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="true">
+                <uib-accordion-heading>Team Vs Products purchased</uib-accordion-heading>
+                <div id="gameoflooks" class="bottom-feed"></div>
+            </div>
+        </uib-accordion>
+    </div>
+</div>

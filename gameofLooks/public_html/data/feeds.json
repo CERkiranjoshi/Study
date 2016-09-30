@@ -1,0 +1,53 @@
+{
+    "feeds": [
+        {
+            "id": "1",
+            "user": "piyu",
+            "product": "cap",
+            "product_colour":"Grey",
+            "team_name":"House Of Grey"
+        },
+        {
+            "id": "2",
+            "user": "Omi",
+            "product": "T-shirt",
+            "product_colour":"Red",
+            "team_name":"House Of Red"
+        },
+        {
+            "id": "3",
+            "user": "vivek",
+            "product": "jeans",
+            "product_colour":"Yellow",
+            "team_name":"House Of Yellow"
+        },
+        {
+            "id": "4",
+            "user": "roch20",
+            "product": "Belt",
+            "product_colour":"Orange",
+            "team_name":"House Of Orange"
+        },
+        {
+            "id": "5",
+            "user": "Rikin",
+            "product": "Sunglasses",
+            "product_colour":"Red",
+            "team_name":"House Of Red"
+        },
+        {
+            "id": "6",
+            "user": "sonia",
+            "product": "shoes",
+            "product_colour":"Green",
+            "team_name":"House Of Green"
+        },
+        {
+            "id": "7",
+            "user": "love",
+            "product": "cap",
+            "product_colour":"White",
+            "team_name":"House Of White"
+        }
+    ]
+}

@@ -1,0 +1,304 @@
+/*
+
+My Custom CSS
+=============
+
+Author:  Kiran Joshi
+Updated: SEP 2016
+
+*/
+
+
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+footer {
+    background: #333;
+    color: #eee;
+    font-size: 11px;
+    padding: 20px;
+}
+
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    overflow-x: hidden
+}
+
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+
+#searchInput {
+    width: 170px;
+}
+
+.navbar-brand {
+    padding: 0px;
+    margin-left:-4px !important;
+}
+.navbar-default{
+    background-color: black;  
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+}
+.navbar{
+    margin-bottom: 0px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border-color: #949393 ! important;
+    border: 2px solid #ddd;
+    border-bottom: 0px;
+}
+a{
+    color: #337ab7;
+}
+.form-group{
+    margin-bottom: 0px;
+}
+.form-control{
+    height: 28px;
+}
+label {
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+
+}
+
+
+
+/*steps builder css*/
+
+/*
+steps
+*/
+.container-fluid{
+    padding-left: 4px;
+    padding-right: 4px;
+        
+}
+.bottom-feed{
+    width: auto;
+    /*height: 420px;*/
+}
+.col-left{
+    padding-right: 4px;
+}
+.col-right{
+    padding-left: 4px;
+}
+.col-inside{
+    padding-right: 4px;
+    padding-left: 4px;
+}
+.glyphicon
+{
+    margin-right:4px !important; /*override*/
+}
+
+.pagination .glyphicon
+{
+    margin-right:0px !important; /*override*/
+}
+
+.pagination a
+{
+    color:#555;
+}
+
+.panel ul
+{
+    padding:0px;
+    margin:0px;
+    list-style:none;
+}
+.row-dashboard{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+.vticker{
+    height: 285px !important;  
+}
+.product-info{
+    text-align: center;
+    border: 5px solid black;
+    /*padding: 10px;*/
+    font-weight: bold;
+    font-size: 24px;
+}
+.team-list{
+    margin-top: 8px;
+}
+.list-group{
+    margin-bottom: 0px;   
+}
+.list-group-item,.team-panel>.panel-heading{
+    color:#FFFFFF;
+    font-weight: bold;
+}
+.panel-group{
+    margin-bottom: 8px;
+}
+.panel-title{
+    font-weight: bold;
+    font-size: 14px;
+}
+.panel-body{
+    padding: 10px;
+}
+.panel-default-green{
+    border: 1px solid #008000;
+    border-radius: 4px;
+}
+.panel-default-blue{
+    border: 1px solid #0000FF;
+    border-radius: 4px;
+}
+.panel-default-yellow{
+    border: 1px solid #FFFF00;
+    border-radius: 4px;
+}
+.panel-default-orange{
+    border: 1px solid #FF7F00;
+    border-radius: 4px;
+}
+.panel-default-white{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.panel-default-red{
+    border: 1px solid #FF0000;
+    border-radius: 4px;
+}
+.panel-default-grey{
+    border: 1px solid #A9A9A9;
+    border-radius: 4px;
+}
+.list-group-item-green,.panel-default-green>.panel-heading{
+    background-color: #008000;
+}
+.list-group-item-blue,.panel-default-blue>.panel-heading{
+    background-color: #0000FF;
+}
+.list-group-item-yellow,.panel-default-yellow>.panel-heading{
+    background-color:  #FFFF00;
+    color: #000000;
+    
+}
+.list-group-item-orange,.panel-default-orange>.panel-heading{
+    background-color: #FF7F00;
+}
+.list-group-item-white,.panel-default-white>.panel-heading{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.list-group-item-red,.panel-default-red>.panel-heading{
+    background-color: #FF0000;
+}
+.list-group-item-grey,.panel-default-grey>.panel-heading{
+    background-color: #A9A9A9;
+}
+.col-sm-2 {
+    /*width: 192px;*/
+}
+.team-member-list{
+    padding: 4px 5px;
+}
+.team-captain{
+    background-color: blue !important;
+    color: white !important;
+}
+/*.list-group-item-green{
+    background-color: #00FF00;
+}
+.list-group-item-yellow{
+    background-color: #FFFF00;
+}
+
+.list-group-item-grey{
+    background-color: #A9A9A9;
+}
+.list-group-item-white{
+    background-color: #FFFFFF;
+}*/
+
+/* line 3, ../app/styles/angular-ticker.scss */
+/*[ticker] * {
+  box-sizing: border-box;
+}*/
+/* line 7, ../app/styles/angular-ticker.scss */
+/*[ticker].active {
+  display: block;
+  height: 300px;
+  overflow-y: hidden;
+}
+ line 13, ../app/styles/angular-ticker.scss 
+[ticker] li {
+  padding: 10.5px;
+  transition: opacity 0.3s ease, margin 1s ease;
+}
+ line 18, ../app/styles/angular-ticker.scss 
+[ticker] .fade-out {
+  opacity: 0;
+}
+ line 22, ../app/styles/angular-ticker.scss 
+[ticker] .minus-margin-top {
+  margin-top: -39px;
+}*/
+.panel-overlay {
+    /* set it to fill the whole panel */
+    top: 0; right: 0; bottom: 0; left: 0;
+    position: absolute;
+    width: 665px;
+    height: 149px;
+}
+.winner-team-rank{
+    background-color: black;
+    color: white;
+    margin-left: 5%;
+    border-radius: 25px;
+    padding: 3px;
+    font-size: 22px;
+    
+}
+/*.panel { position: relative; }*/
+.news-item{
+    padding: 9px 15px;
+}
